@@ -5,7 +5,7 @@
   "scripts": {
     "ng": "ng",
     "nx": "nx",
-    "start": "ng serve",
+    "start:world-bank": "ng serve world-bank --port=4201 -o",
     "build": "ng build",
     "test": "ng test",
     "lint": "nx workspace-lint && ng lint",

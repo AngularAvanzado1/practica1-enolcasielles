@@ -1,0 +1,11 @@
+<h1>Regiones</h1>
+
+<div class="regions-container">
+  <div *ngFor="let region of regions$ | async ; let i=index">
+    <ecm-ui-card [title]="region.name" [value]="'#'+region.code" [object]="region" (clickCard)="goRegion($event)"></ecm-ui-card>
+  </div>
+</div>
+
+<div *ngIf="(hasError$ | async)" class="error-container">
+  <h3>Oooops. Algo no fue bien</h3>
+</div>

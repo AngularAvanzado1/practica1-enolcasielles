@@ -1,0 +1,15 @@
+<div *ngIf="country$ | async as country">
+  <h1>{{country.name}}</h1>
+  <a [routerLink]="['/region', country.region.code]" > {{country.region.name}} </a>
+</div>
+
+
+<div class="data-container" *ngIf="country$ | async as country">
+  <ecm-ui-card title="Capital" [value]="country.capitalCity"></ecm-ui-card>
+  <ecm-ui-card *ngIf="country.incomLevel" title="Nivel de ingresos" [value]="country.incomLevel"></ecm-ui-card>
+  <ecm-ui-card *ngIf="country.lendingType" title="Tipo de crédito" [value]="country.lendingType"></ecm-ui-card>
+</div>
+
+<div *ngIf="(hasError$ | async)" class="error-container">
+  <h3>Oooops. Algo no fue bien</h3>
+</div>

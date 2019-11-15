@@ -1,0 +1,11 @@
+<h1>{{(region$ | async)?.name}}</h1>
+
+<div class="continent-container">
+  <div *ngFor="let country of countries$ | async">
+    <a [routerLink]="['/country', country.id]"> {{country.name}} </a>
+  </div>
+</div>
+
+<div *ngIf="(hasError$ | async)" class="error-container">
+  <h3>Oooops. Algo no fue bien</h3>
+</div>

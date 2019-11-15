@@ -123,6 +123,186 @@
           }
         }
       }
+    },
+    "world-bank": {
+      "projectType": "application",
+      "schematics": {
+        "@nrwl/angular:component": {
+          "inlineStyle": true,
+          "style": "scss"
+        }
+      },
+      "root": "apps/world-bank",
+      "sourceRoot": "apps/world-bank/src",
+      "prefix": "angular-blueprint",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/apps/world-bank",
+            "index": "apps/world-bank/src/index.html",
+            "main": "apps/world-bank/src/main.ts",
+            "polyfills": "apps/world-bank/src/polyfills.ts",
+            "tsConfig": "apps/world-bank/tsconfig.app.json",
+            "aot": false,
+            "assets": [
+              "apps/world-bank/src/favicon.ico",
+              "apps/world-bank/src/assets"
+            ],
+            "styles": ["apps/world-bank/src/styles.scss"],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/world-bank/src/environments/environment.ts",
+                  "with": "apps/world-bank/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "world-bank:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "world-bank:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "world-bank:build"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "apps/world-bank/tsconfig.app.json",
+              "apps/world-bank/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!apps/world-bank/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "apps/world-bank/jest.config.js",
+            "tsConfig": "apps/world-bank/tsconfig.spec.json",
+            "setupFile": "apps/world-bank/src/test-setup.ts"
+          }
+        }
+      }
+    },
+    "world-bank-e2e": {
+      "root": "apps/world-bank-e2e",
+      "sourceRoot": "apps/world-bank-e2e/src",
+      "projectType": "application",
+      "architect": {
+        "e2e": {
+          "builder": "@nrwl/cypress:cypress",
+          "options": {
+            "cypressConfig": "apps/world-bank-e2e/cypress.json",
+            "tsConfig": "apps/world-bank-e2e/tsconfig.e2e.json",
+            "devServerTarget": "world-bank:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "world-bank:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": ["apps/world-bank-e2e/tsconfig.e2e.json"],
+            "exclude": ["**/node_modules/**", "!apps/world-bank-e2e/**"]
+          }
+        }
+      }
+    },
+    "shared-domain": {
+      "root": "libs/shared/domain",
+      "sourceRoot": "libs/shared/domain/src",
+      "projectType": "library",
+      "schematics": {},
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/shared/domain/tsconfig.lib.json",
+              "libs/shared/domain/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/shared/domain/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/shared/domain/jest.config.js",
+            "tsConfig": "libs/shared/domain/tsconfig.spec.json"
+          }
+        }
+      }
+    },
+    "shared-ui": {
+      "projectType": "library",
+      "root": "libs/shared/ui",
+      "sourceRoot": "libs/shared/ui/src",
+      "prefix": "ecm-ui",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/shared/ui/tsconfig.lib.json",
+              "libs/shared/ui/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/shared/ui/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/shared/ui/jest.config.js",
+            "tsConfig": "libs/shared/ui/tsconfig.spec.json",
+            "setupFile": "libs/shared/ui/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "styleext": "scss"
+        }
+      }
     }
   },
   "cli": {

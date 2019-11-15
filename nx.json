@@ -13,6 +13,18 @@
     },
     "practica": {
       "tags": []
+    },
+    "world-bank-e2e": {
+      "tags": []
+    },
+    "world-bank": {
+      "tags": []
+    },
+    "shared-domain": {
+      "tags": []
+    },
+    "shared-ui": {
+      "tags": []
     }
   }
 }
