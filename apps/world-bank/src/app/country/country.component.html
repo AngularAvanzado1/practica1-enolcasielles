@@ -5,10 +5,14 @@
 
 
 <div class="data-container" *ngIf="country$ | async as country">
-  <ecm-ui-card title="Capital" [value]="country.capitalCity"></ecm-ui-card>
-  <ecm-ui-card *ngIf="country.incomLevel" title="Nivel de ingresos" [value]="country.incomLevel"></ecm-ui-card>
-  <ecm-ui-card *ngIf="country.lendingType" title="Tipo de crédito" [value]="country.lendingType"></ecm-ui-card>
+  <ecm-ui-card title="Capital" [value]="country.capitalCity" [clickable]="false"></ecm-ui-card>
+  <ecm-ui-card *ngIf="country.incomLevel" title="Nivel de ingresos" [value]="country.incomLevel" [clickable]="false"></ecm-ui-card>
+  <ecm-ui-card *ngIf="country.lendingType" title="Tipo de crédito" [value]="country.lendingType" [clickable]="false"></ecm-ui-card>
 </div>
+
+<h3 *ngIf="!(country$ | async)" class="loading-container" >
+  Cargando...
+</h3>
 
 <div *ngIf="(hasError$ | async)" class="error-container">
   <h3>Oooops. Algo no fue bien</h3>

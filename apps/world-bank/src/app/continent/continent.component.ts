@@ -1,8 +1,6 @@
-import { Region } from '@ecm/domain';
+import { Region, Country } from '@ecm/domain';
 import { catchError, mapTo } from 'rxjs/operators';
-import { Country } from './../../../../../libs/shared/domain/src/lib/models/country';
 import { ApiService } from './../services/api.service';
-import { Continent } from './../../../../../libs/shared/domain/src/lib/models/continent';
 import { Observable, of } from 'rxjs';
 import { Component, OnInit } from '@angular/core';
 import { Route } from '@angular/compiler/src/core';
@@ -11,7 +9,7 @@ import { ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'angular-blueprint-continent',
   templateUrl: './continent.component.html',
-  styles: []
+  styleUrls: ['./continent.component.scss']
 })
 export class ContinentComponent implements OnInit {
 

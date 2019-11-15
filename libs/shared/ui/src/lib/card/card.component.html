@@ -1,4 +1,4 @@
-<div class="container" (click)="onClickCard()">
+<div class="container" (click)="onClickCard()" [style.cursor]="clickable ? 'pointer': 'initial'">
   <p>{{title}}</p>
   <span>{{value}}</span>
 </div>

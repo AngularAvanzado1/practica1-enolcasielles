@@ -1,4 +1,7 @@
-<h1>{{(region$ | async)?.name}}</h1>
+<div *ngIf="region$ | async as region" class="continent-data">
+  <h1>{{region.name}}</h1>
+  <span> {{region.code}} </span>
+</div>
 
 <div class="continent-container">
   <div *ngFor="let country of countries$ | async">

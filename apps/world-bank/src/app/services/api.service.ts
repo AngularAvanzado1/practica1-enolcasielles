@@ -42,8 +42,15 @@ export class ApiService {
 
   public getRegion(code: string): Observable<Region> {
     const regions = this.regions$.getValue();
-    if(!regions) return of(null);
-    else return of(regions.find((region: Region) => region.code === code));
+    const region$: BehaviorSubject<Region> = new BehaviorSubject(null);
+    this.getRegions().subscribe((regions: Region[]) => {
+      try {
+        region$.next(regions.find((region: Region) => region.code === code));
+      } catch(e) {
+        region$.next(null);
+      }
+    });
+    return region$;
   }
 
   public getContinent(code: string): Observable<Country[]> {
