@@ -1,14 +1,15 @@
 import { ApiService } from './../services/api.service';
 import { Region, Country, Continent } from '@ecm/domain';
 import { BehaviorSubject, Observable, of } from 'rxjs';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { catchError, mapTo } from 'rxjs/operators';
 import { Router } from '@angular/router';
 
 @Component({
   selector: 'angular-blueprint-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
+  styleUrls: ['./home.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class HomeComponent implements OnInit {
 

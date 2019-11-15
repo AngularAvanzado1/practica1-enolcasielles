@@ -2,13 +2,13 @@ import { catchError, mapTo } from 'rxjs/operators';
 import { ApiService } from './../services/api.service';
 import { ActivatedRoute } from '@angular/router';
 import { Observable, of } from 'rxjs';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { Country } from '@ecm/domain';
 
 @Component({
   selector: 'angular-blueprint-country',
   templateUrl: './country.component.html',
-  styles: []
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class CountryComponent implements OnInit {
 

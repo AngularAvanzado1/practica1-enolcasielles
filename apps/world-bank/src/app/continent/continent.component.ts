@@ -2,14 +2,15 @@ import { Region, Country } from '@ecm/domain';
 import { catchError, mapTo } from 'rxjs/operators';
 import { ApiService } from './../services/api.service';
 import { Observable, of } from 'rxjs';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { Route } from '@angular/compiler/src/core';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'angular-blueprint-continent',
   templateUrl: './continent.component.html',
-  styleUrls: ['./continent.component.scss']
+  styleUrls: ['./continent.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ContinentComponent implements OnInit {
 
