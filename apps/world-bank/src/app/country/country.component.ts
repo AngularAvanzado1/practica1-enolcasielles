@@ -12,9 +12,9 @@ import { Country } from '@ecm/domain';
 })
 export class CountryComponent implements OnInit {
 
-  private id: string;
-  private country$: Observable<Country>;
-  private hasError$: Observable<boolean>;
+  id: string;
+  country$: Observable<Country>;
+  hasError$: Observable<boolean>;
 
   constructor(private apiService: ApiService, private route: ActivatedRoute) {
     this.id = route.snapshot.params['id'];

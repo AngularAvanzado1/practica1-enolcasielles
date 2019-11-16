@@ -147,7 +147,8 @@
             "aot": false,
             "assets": [
               "apps/world-bank/src/favicon.ico",
-              "apps/world-bank/src/assets"
+              "apps/world-bank/src/assets",
+              "apps/world-bank/src/manifest.webmanifest"
             ],
             "styles": ["apps/world-bank/src/styles.scss"],
             "scripts": []
@@ -180,7 +181,9 @@
                   "maximumWarning": "6kb",
                   "maximumError": "10kb"
                 }
-              ]
+              ],
+              "serviceWorker": true,
+              "ngswConfigPath": "apps/world-bank/ngsw-config.json"
             }
           }
         },

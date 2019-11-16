@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { SwPush, SwUpdate } from '@angular/service-worker';
 
 @Component({
   selector: 'angular-blueprint-root',
@@ -143,4 +144,25 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'world-bank';
+
+  constructor(private swUpdate: SwUpdate) {
+    this.checkVersionUpdates();
+  }
+
+  private checkVersionUpdates() {
+    if (this.swUpdate.isEnabled) {
+      this.swUpdate.available.subscribe(event => {
+        if (event.current.appData) {
+          const appData: any = event.current.appData;
+          let msg = `New version ${appData.version} available.`;
+          msg += `${appData.changelog}.`;
+          msg += 'Reaload now?';
+          if (confirm(msg)) {
+            window.location.reload();
+          }
+        }
+      });
+    }
+  }
+
 }

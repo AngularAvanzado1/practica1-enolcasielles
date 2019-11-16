@@ -12,6 +12,7 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
 import * as fromStore from './store/store.reducer';
 import { StoreEffects } from './store/store.effects';
+import { ServiceWorkerModule } from '@angular/service-worker';
 
 @NgModule({
   declarations: [AppComponent],
@@ -35,7 +36,8 @@ import { StoreEffects } from './store/store.effects';
     EffectsModule.forRoot([]),
     !environment.production ? StoreDevtoolsModule.instrument() : [],
     StoreModule.forFeature(fromStore.storeFeatureKey, fromStore.reducer),
-    EffectsModule.forFeature([StoreEffects])
+    EffectsModule.forFeature([StoreEffects]),
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [],
   bootstrap: [AppComponent]

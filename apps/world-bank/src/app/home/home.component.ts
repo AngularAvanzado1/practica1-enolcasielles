@@ -14,8 +14,8 @@ import { Router } from '@angular/router';
 })
 export class HomeComponent implements OnInit {
 
-  private regions$: Observable<Region[]>;
-  private hasError$: Observable<boolean>;
+  regions$: Observable<Region[]>;
+  hasError$: Observable<boolean>;
 
   constructor(private storeService: StoreService, private router: Router) {
     this.storeService.loadRegions();

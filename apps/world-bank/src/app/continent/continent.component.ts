@@ -14,10 +14,10 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class ContinentComponent implements OnInit {
 
-  private code: string;
-  private region$: Observable<Region>;
-  private countries$: Observable<Country[]>;
-  private hasError$: Observable<boolean>;
+  code: string;
+  region$: Observable<Region>;
+  countries$: Observable<Country[]>;
+  hasError$: Observable<boolean>;
 
   constructor(private apiService: ApiService, private route: ActivatedRoute) {
     this.code = route.snapshot.params['code'];
