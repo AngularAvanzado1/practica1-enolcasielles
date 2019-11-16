@@ -1,3 +1,4 @@
+import { StoreService } from './../store/store.service';
 import { ApiService } from './../services/api.service';
 import { Region, Country, Continent } from '@ecm/domain';
 import { BehaviorSubject, Observable, of } from 'rxjs';
@@ -16,14 +17,17 @@ export class HomeComponent implements OnInit {
   private regions$: Observable<Region[]>;
   private hasError$: Observable<boolean>;
 
-  constructor(private apiService: ApiService, private router: Router) { }
+  constructor(private storeService: StoreService, private router: Router) {
+    this.storeService.loadRegions();
+  }
 
   ngOnInit() {
-    this.regions$ = this.apiService.getRegions();
+    this.regions$ = this.storeService.getRegions();
     this.hasError$ = this.regions$.pipe(catchError(err => of(true)), mapTo(false));
   }
 
   goRegion(region: Region) {
+    this.storeService.selectRegion(region);
     this.router.navigate(['/region', region.code]);
   }
 

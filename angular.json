@@ -317,5 +317,5 @@
       "unitTestRunner": "jest"
     }
   },
-  "defaultProject": "practica"
+  "defaultProject": "world-bank"
 }
