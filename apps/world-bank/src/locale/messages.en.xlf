@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en" datatype="plaintext" original="ng2.template">
+    <body>
+      <trans-unit id="b2b3198005f7735b3428f3482350cfafeb684eeb" datatype="html">
+        <source> Inicio </source>
+        <target> Home </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/app.component.html</context>
+          <context context-type="linenumber">1</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="342cde4736a2df31e2edd36cc03707126598186f" datatype="html">
+        <source><x id="INTERPOLATION" equiv-text="{{country.name}}"/></source>
+        <target><x id="INTERPOLATION" equiv-text="{{country.name}}"/></target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/country/country.component.html</context>
+          <context context-type="linenumber">2</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="fe16800562059c7702ed2881ddec5b6477f888e0" datatype="html">
+        <source>Cargando...</source>
+        <target>Loading...</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/country/country.component.html</context>
+          <context context-type="linenumber">13</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="53d31e548e756640a54d7a1de807bc7c8ced0c08" datatype="html">
+        <source>Oooops. Algo no fue bien</source>
+        <target>Oooops. Something was wrong</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/country/country.component.html</context>
+          <context context-type="linenumber">18</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home/home.component.html</context>
+          <context context-type="linenumber">10</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/continent/continent.component.html</context>
+          <context context-type="linenumber">13</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5be9f18a9cda49c4086d0c7674d360b7908ca9fe" datatype="html">
+        <source>Regiones</source>
+        <target>Regions</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home/home.component.html</context>
+          <context context-type="linenumber">1</context>
+        </context-group>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

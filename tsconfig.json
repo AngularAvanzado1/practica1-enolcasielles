@@ -20,5 +20,9 @@
       "@ecm/ui": ["libs/shared/ui/src/index.ts"]
     }
   },
-  "exclude": ["node_modules", "tmp"]
+  "exclude": ["node_modules", "tmp"],
+  "angularCompilerOptions": {
+    "enableIvy": false
+  }
+
 }

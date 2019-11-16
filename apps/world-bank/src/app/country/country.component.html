@@ -1,5 +1,5 @@
 <div *ngIf="country$ | async as country">
-  <h1>{{country.name}}</h1>
+  <h1 i18n>{{country.name}}</h1>
   <a [routerLink]="['/region', country.region.code]" > {{country.region.name}} </a>
 </div>
 
@@ -10,10 +10,10 @@
   <ecm-ui-card *ngIf="country.lendingType" title="Tipo de crédito" [value]="country.lendingType" [clickable]="false"></ecm-ui-card>
 </div>
 
-<h3 *ngIf="!(country$ | async)" class="loading-container" >
+<h3 *ngIf="!(country$ | async)" class="loading-container"  i18n>
   Cargando...
 </h3>
 
 <div *ngIf="(hasError$ | async)" class="error-container">
-  <h3>Oooops. Algo no fue bien</h3>
+  <h3 i18n>Oooops. Algo no fue bien</h3>
 </div>

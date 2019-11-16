@@ -1,4 +1,4 @@
-<h1>Regiones</h1>
+<h1 i18n>Regiones</h1>
 
 <div class="regions-container">
   <div *ngFor="let region of regions$ | async ; let i=index">
@@ -7,5 +7,5 @@
 </div>
 
 <div *ngIf="(hasError$ | async)" class="error-container">
-  <h3>Oooops. Algo no fue bien</h3>
+  <h3 i18n>Oooops. Algo no fue bien</h3>
 </div>

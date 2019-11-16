@@ -7,6 +7,8 @@
     "nx": "nx",
     "start:world-bank": "ng serve world-bank --port=4201 -o",
     "build": "ng build",
+    "build:world-bank-en": "ng build world-bank --configuration=production-en",
+    "start:world-bank-en": "npm run build:world-bank-en && angular-http-server --path ./dist/apps/world-bank/en",
     "test:world-bank": "ng test world-bank --watch --verbose",
     "lint": "nx workspace-lint && ng lint",
     "e2e:world-bank": "ng e2e world-bank-e2e --watch",
@@ -25,7 +27,8 @@
     "update:check": "ng update",
     "workspace-schematic": "nx workspace-schematic",
     "dep-graph": "nx dep-graph",
-    "help": "nx help"
+    "help": "nx help",
+    "i18n:world-bank": "ng xi18n world-bank --output-path src/locale"
   },
   "private": true,
   "dependencies": {
@@ -44,6 +47,7 @@
     "@ngrx/router-store": "8.3.0",
     "@ngrx/store": "8.3.0",
     "@nrwl/angular": "8.7.0",
+    "angular-http-server": "^1.9.0",
     "core-js": "^2.5.4",
     "rxjs": "~6.4.0",
     "zone.js": "^0.9.1"

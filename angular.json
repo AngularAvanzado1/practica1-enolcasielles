@@ -184,6 +184,19 @@
               ],
               "serviceWorker": true,
               "ngswConfigPath": "apps/world-bank/ngsw-config.json"
+            },
+            "production-en": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/world-bank/src/environments/environment.ts",
+                  "with": "apps/world-bank/src/environments/environment.prod.en.ts"
+                }
+              ],
+              "outputPath": "dist/apps/world-bank/en/",
+              "i18nFile": "apps/world-bank/src/locale/messages.en.xlf",
+              "i18nFormat": "xlf",
+              "i18nLocale": "en",
+              "baseHref": "en"
             }
           }
         },
